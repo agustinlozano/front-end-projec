@@ -9,6 +9,7 @@ Punto bonus: Crear un botón para "empezar de nuevo" que empiece el proceso nuev
 
 document.querySelector("#boton-cargar-numero-integrantes").onclick = function () {
     const $numeroDeItegrantes = Number(document.querySelector("#holder-numero-de-integrantes").value);
+    borrarIntegrantes();
     evaluarIntegrantes($numeroDeItegrantes);
 }
 
@@ -21,25 +22,35 @@ function evaluarIntegrantes($numeroDeItegrantes) {
 
 }
 
+function borrarIntegrantes() {
+    const $integrantes = document.querySelectorAll('.integrante');
+    for (let i = 0; i < $integrantes.length; i++) {
+        $integrantes[i].remove();
+    }
+
+}
+
 function generarIntegrantes($numeroDeItegrantes) {
     for (let i = 1; i <= $numeroDeItegrantes; i++) {
 
-        //esta sección crea los label/input/br
+        //esta sección crea los label/input + un *nuevo* <div> donde ponerlos
         const $nodoLabel = document.createElement('label');
         $nodoLabel.innerHTML = `Ingrese la edad del integrante n° #${i}`;
-
-        const $saltoDeLinea = document.createElement('br');
 
         const $nodoInput = document.createElement('input');
         $nodoInput.classList.add("edad-integrantes");
 
+        const $div = document.createElement('div');
+        $div.className = 'integrante';
 
-        //esta sección los muestra
-        document.querySelector('#integrantes').appendChild($nodoLabel);
-        document.querySelector('#integrantes').appendChild($saltoDeLinea);
-        document.querySelector('#integrantes').appendChild($nodoInput);
-        document.querySelector('#integrantes').appendChild($saltoDeLinea);
 
+        //esta sección los mete al div
+        $div.appendChild($nodoLabel);
+        $div.appendChild($nodoInput);
+
+        //aquí introducimos todo lo que creamos en el <div> vacio del HTML
+        const $integrantes = document.querySelector('#integrantes');
+        $integrantes.appendChild($div);
     }
 
     //Mostrar botón
@@ -55,88 +66,31 @@ document.querySelector("#resetear").onclick = function () {
 function resetearPrograma() {
     borrarIntegrantes();
     ocultarBotonCalculo();
+    ocultarResultados();
     return false;
-}
-
-function borrarIntegrantes() {
-    const $integrantes = document.querySelector('#integrantes');
-    $integrantes.remove();
 }
 
 function ocultarBotonCalculo() {
-    document.getElementById('boton-imprimir-respuestas').disabled = true;
+    document.querySelector('#boton-imprimir-respuestas').disabled = true;
     return false;
+}
+
+function ocultarResultados() {
+    document.querySelector('#respuestas').className = 'oculto';
 }
 
 document.querySelector("#boton-imprimir-respuestas").onclick = function () {
 
     let $conjuntoDeEdades = document.querySelectorAll('.edad-integrantes');
 
-    calcularPromedio();
-    calcularNumeroMayor();
-    calcularNumeroMenor();
-    // numeroMasFrecuente();
+    calcularPromedio($conjuntoDeEdades);
+    calcularNumeroMayor($conjuntoDeEdades);
+    calcularNumeroMenor($conjuntoDeEdades);
+    
+    mostrarResultados();
 
+}
 
-    function calcularPromedio() {
-        let arrayDeNumeros = [];
-
-        for (let i = 0; i < $conjuntoDeEdades.length; i++) {
-            arrayDeNumeros.push(Number($conjuntoDeEdades[i].value));
-        }
-
-        let total = 0;
-
-        for (i = 0; i < arrayDeNumeros.length; i++) {
-            let elementoArray = arrayDeNumeros[i];
-            total = total + elementoArray;
-        }
-
-        let $contenidoEm = document.querySelector("#promedio");
-
-        valorPromedio = total / arrayDeNumeros.length;
-
-        $contenidoEm.innerText = `El promedio de edades es: ${valorPromedio}`;
-
-    }
-
-
-    function calcularNumeroMayor() {
-        let numeroMayor;
-        let comparador = 0;
-
-        for (let i = 0; i < $conjuntoDeEdades.length; i++) {
-            let numeroAnalizado = Number($conjuntoDeEdades[i].value);
-
-            if (numeroAnalizado >= comparador) {
-                numeroMayor = numeroAnalizado;
-                comparador = numeroMayor;
-            }
-        }
-
-        let $contenidoEm = document.querySelector("#numero-mas-grande");
-
-        $contenidoEm.innerText = `La mayor edad es: ${numeroMayor}`;
-    }
-
-
-    function calcularNumeroMenor() {
-        let numeroMenor;
-        let comparador = 9999999; //limite
-
-        for (let i = 0; i < $conjuntoDeEdades.length; i++) {
-            let numeroAnalizado = Number($conjuntoDeEdades[i].value);
-
-            if (numeroAnalizado <= comparador) {
-                numeroMenor = numeroAnalizado;
-                comparador = numeroMenor;
-            }
-        }
-
-        let $contenidoEm = document.querySelector("#numero-mas-chico");
-
-        $contenidoEm.innerText = `La menor edad es: ${numeroMenor}`;
-    }
-
-
+function mostrarResultados () {
+    document.querySelector('#respuestas').className = '';
 }

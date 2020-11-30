@@ -21,3 +21,7 @@ section{
 	border-radius: 10px;
 	text-align: left;
 }
+
+.oculto{
+	display: none;
+}
