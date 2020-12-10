@@ -1,4 +1,4 @@
-function mayorSalario(arrayDeSalariosAnuales) {
+function calcularMayorSalario(arrayDeSalariosAnuales) {
     let comprarador = 0;
     let elementoMayor;
     for (let i = 0; i < arrayDeSalariosAnuales.length; i++) {
@@ -11,7 +11,7 @@ function mayorSalario(arrayDeSalariosAnuales) {
     return elementoMayor;
 }
 
-function menorSalario(arrayDeSalariosAnuales) {
+function calcularMenorSalario(arrayDeSalariosAnuales) {
     let comprarador = 9999999;
     let elementoMenor;
     for (let i = 0; i < arrayDeSalariosAnuales.length; i++) {
@@ -24,37 +24,11 @@ function menorSalario(arrayDeSalariosAnuales) {
     return elementoMenor;
 }
 
-function salarioAnualPromedio(arrayDeSalariosAnuales) {
+function calcularPromedio(array) {
     let sumaDeElemntos = 0;
-    for (let i = 0; i < arrayDeSalariosAnuales.length; i++) {
-        let elementoDeArray = arrayDeSalariosAnuales[i];
+    for (let i = 0; i < array.length; i++) {
+        let elementoDeArray = array[i];
         sumaDeElemntos = sumaDeElemntos + elementoDeArray;
     }
-    return sumaDeElemntos / arrayDeSalariosAnuales.length;
-}
-
-function salarioMensualPromedio(arrayDeSalariosAnuales) {
-    let arrayDeSalariosMensuales = [];
-    calcularSalarioMensual(arrayDeSalariosAnuales, arrayDeSalariosMensuales);
-    return calcularPromedioDeLosSalariosMensuales(arrayDeSalariosMensuales);
-}
-
-function calcularSalarioMensual(arrayDeSalariosAnuales, arrayDeSalariosMensuales ) {
-    for (let i = 0; i < arrayDeSalariosAnuales.length; i++) {
-        let mesesDelAño = 12;
-        let elementoDeArray = arrayDeSalariosAnuales[i];
-        let salarioMensual = elementoDeArray / mesesDelAño;
-        arrayDeSalariosMensuales.push(Math.round(salarioMensual));
-    }
-    return arrayDeSalariosMensuales;
-}   
-
-function calcularPromedioDeLosSalariosMensuales(arrayDeSalariosMensuales) {
-    let sumaDeElemntos = 0;
-    for (let i = 0; i < arrayDeSalariosMensuales.length; i++) {
-        let elementoDeArray = arrayDeSalariosMensuales[i];
-        sumaDeElemntos = sumaDeElemntos + elementoDeArray;
-    }
-    resultadoFinal = sumaDeElemntos / arrayDeSalariosMensuales.length;
-    return resultadoFinal;
+    return sumaDeElemntos / array.length;
 }

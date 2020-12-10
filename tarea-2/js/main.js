@@ -34,7 +34,7 @@ function crearNuevoIntegrante(contadorIntegrantes) {
 
     mostrarNuevoIntegrante($div);
 
-    actualizarValorDelContadorDeIntegrantes();
+    incrementarCantidadIntegrates();
 
 }
 
@@ -43,7 +43,7 @@ function mostrarNuevoIntegrante($div) {
     $integrantes.appendChild($div);
 }
 
-function actualizarValorDelContadorDeIntegrantes() {
+function incrementarCantidadIntegrates() {
     contadorIntegrantes++;
     return contadorIntegrantes;
 }
@@ -55,7 +55,6 @@ function mostrarContenedorDeIntegrantes() {
 function mostrarBotonCalcular() {
     document.querySelector('#realizar-calculos').className = '';
 }
-
 
 document.querySelector('#quitar-integrante').onclick = function (event) {
     quitarUltimoIntegrante();
@@ -75,28 +74,40 @@ function quitarUltimoIntegrante() {
 
 document.querySelector('#realizar-calculos').onclick = function (event) {
     let arrayDeSalariosAnuales = [];
-    recorrerNodeListDeIntegrantes(arrayDeSalariosAnuales);
-    llamarFucionesDeCalculos(arrayDeSalariosAnuales);
+    let arrayDeSalariosMensuales = [];
+    pushearSalariosDeLosIntegrantes(arrayDeSalariosAnuales);
+    calcularSalariosMensuales(arrayDeSalariosAnuales, arrayDeSalariosMensuales); 
+    llamarFucionesDeCalculos(arrayDeSalariosAnuales, arrayDeSalariosMensuales);   
 
     event.preventDefault();
 }
 
-function recorrerNodeListDeIntegrantes(arrayDeSalariosAnuales) {
+function pushearSalariosDeLosIntegrantes(arrayDeSalariosAnuales) {
     const $integrantes = document.querySelectorAll('.edad-integrante');
     for (let i = 0; i < $integrantes.length; i++) {
         let evaluarElemento = $integrantes[i];
-        if (evaluarElemento.value !== '') {
+        if (evaluarElemento.value  !== '') {
             arrayDeSalariosAnuales.push(Number(evaluarElemento.value));
         }
     }
-
+    return arrayDeSalariosAnuales;
 }
 
-function llamarFucionesDeCalculos(arrayDeSalariosAnuales) {
-    mostrarSalarios('mayor', mayorSalario(arrayDeSalariosAnuales));
-    mostrarSalarios('menor', menorSalario(arrayDeSalariosAnuales));
-    mostrarPromedios('salario-anual', salarioAnualPromedio(arrayDeSalariosAnuales));
-    mostrarPromedios('salario-mensual', salarioMensualPromedio(arrayDeSalariosAnuales));
+function calcularSalariosMensuales(arrayDeSalariosAnuales, arrayDeSalariosMensuales) {
+    for (let i = 0; i < arrayDeSalariosAnuales.length; i++) {
+        const mesesDelAño = 12;
+        let elementoDeArray = arrayDeSalariosAnuales[i];
+        let salarioMensual = elementoDeArray / mesesDelAño;
+        arrayDeSalariosMensuales.push(Math.round(salarioMensual));
+    }
+    return arrayDeSalariosMensuales;
+} 
+
+function llamarFucionesDeCalculos(arrayDeSalariosAnuales, arrayDeSalariosMensuales) {
+    mostrarSalarios('mayor', calcularMayorSalario(arrayDeSalariosAnuales));
+    mostrarSalarios('menor', calcularMenorSalario(arrayDeSalariosAnuales));
+    mostrarPromedios('salario-anual', calcularPromedio(arrayDeSalariosAnuales));
+    mostrarPromedios('salario-mensual', calcularPromedio(arrayDeSalariosMensuales));
     mostrarNodoConResultados();
 }
 
@@ -110,4 +121,8 @@ function mostrarPromedios(tipo, valor) {
 
 function mostrarNodoConResultados () {
     document.querySelector('#respuestas').className = '';
+}
+
+function mostrarElemento(elemento) {
+    document.querySelector(`#${elemento}`).className = '';
 }
