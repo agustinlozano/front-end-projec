@@ -23,7 +23,7 @@ function crearNuevoIntegrante(contadorIntegrantes) {
     $nodoLabel.innerHTML = `Salario anual integrante #${contadorIntegrantes}`;
 
     const $nodoInput = document.createElement('input');
-    $nodoInput.classList.add("edad-integrante");
+    $nodoInput.classList.add("salario-integrante");
     $nodoInput.type = 'number';
 
     const $div = document.createElement('div');
@@ -83,7 +83,7 @@ document.querySelector('#realizar-calculos').onclick = function (event) {
 }
 
 function pushearSalariosDeLosIntegrantes(arrayDeSalariosAnuales) {
-    const $integrantes = document.querySelectorAll('.edad-integrante');
+    const $integrantes = document.querySelectorAll('.salario-integrante');
     for (let i = 0; i < $integrantes.length; i++) {
         let evaluarElemento = $integrantes[i];
         if (evaluarElemento.value  !== '') {

@@ -16,10 +16,13 @@ document.querySelector("#boton-cargar-numero-integrantes").onclick = function ()
 function evaluarIntegrantes($numeroDeItegrantes) {
     if ($numeroDeItegrantes > 0) {
         generarIntegrantes($numeroDeItegrantes);
+        return '';
+
     } else {
         resetearPrograma();
+        return 'Este campo debe incluir un numero positivo mayor que cero';
     }
-
+    
 }
 
 function borrarIntegrantes() {
