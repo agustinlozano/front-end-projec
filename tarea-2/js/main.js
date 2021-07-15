@@ -9,11 +9,11 @@ Punto bonus: si hay inputs vacíos, ignorarlos en el cálculo (no contarlos como
 let contadorIntegrantes = 0;
 
 document.querySelector('#agregar-integrante').onclick = function (event) {
+    event.preventDefault();
+
     crearNuevoIntegrante(contadorIntegrantes);
     mostrarContenedorDeIntegrantes();
     mostrarBotonCalcular();
-
-    event.preventDefault();
 }
 
 function crearNuevoIntegrante(contadorIntegrantes) {
@@ -57,9 +57,9 @@ function mostrarBotonCalcular() {
 }
 
 document.querySelector('#quitar-integrante').onclick = function (event) {
-    quitarUltimoIntegrante();
-
     event.preventDefault();
+    
+    quitarUltimoIntegrante();
 }
 
 function quitarUltimoIntegrante() {
@@ -67,19 +67,22 @@ function quitarUltimoIntegrante() {
     if (contadorIntegrantes > 0) {
         contadorIntegrantes = contadorIntegrantes - 1;
         $integrantes[contadorIntegrantes].remove();
-    } else {
-        return false;
+    }
+
+    if (contadorIntegrantes == 0) {
+        const $botonCalcular = document.querySelector('#realizar-calculos');
+        $botonCalcular.className = 'oculto';
     }
 }
 
 document.querySelector('#realizar-calculos').onclick = function (event) {
+    event.preventDefault();
+
     let arrayDeSalariosAnuales = [];
     let arrayDeSalariosMensuales = [];
     pushearSalariosDeLosIntegrantes(arrayDeSalariosAnuales);
     calcularSalariosMensuales(arrayDeSalariosAnuales, arrayDeSalariosMensuales); 
     llamarFucionesDeCalculos(arrayDeSalariosAnuales, arrayDeSalariosMensuales);   
-
-    event.preventDefault();
 }
 
 function pushearSalariosDeLosIntegrantes(arrayDeSalariosAnuales) {
