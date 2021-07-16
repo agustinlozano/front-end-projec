@@ -11,6 +11,7 @@ document.querySelector("#cargar-integrantes").onclick = function (event) {
     event.preventDefault();
     const $numeroDeItegrantes = Number(document.querySelector("#numero-integrantes").value);
     borrarIntegrantes();
+    modificarBotonImprimir('');
     evaluarIntegrantes($numeroDeItegrantes);
 }
 
@@ -40,7 +41,7 @@ function generarIntegrantes($numeroDeItegrantes) {
         $nodoLabel.innerHTML = `Ingrese la edad del integrante n° #${i}`;
 
         const $nodoInput = document.createElement('input');
-        $nodoInput.classList.add("edad-integrantes");
+        $nodoInput.className = 'edad-integrantes btn-input';
 
         const $div = document.createElement('div');
         $div.className = 'integrante';
@@ -67,18 +68,10 @@ document.querySelector("#resetear").onclick = function () {
 
 function resetearPrograma() {
     borrarIntegrantes();
-    ocultarBotonCalculo();
-    ocultarResultados();
+    modificarBotonImprimir('oculto');
+    modificarResultados('oculto');
+    resetearInput();
     return false;
-}
-
-function ocultarBotonCalculo() {
-    document.querySelector('#imprimir-respuestas').disabled = true;
-    return false;
-}
-
-function ocultarResultados() {
-    document.querySelector('#respuestas').className = 'oculto';
 }
 
 document.querySelector("#imprimir-respuestas").onclick = function () {
@@ -88,9 +81,22 @@ document.querySelector("#imprimir-respuestas").onclick = function () {
     calcularNumeroMayor($conjuntoDeEdades);
     calcularNumeroMenor($conjuntoDeEdades);
     
-    mostrarResultados();
+    modificarResultados('');
 }
 
-function mostrarResultados () {
-    document.querySelector('#respuestas').className = '';
+function modificarBotonImprimir(estado) {
+    const $botonRespuestas  = document.querySelector('#imprimir-respuestas');
+    $botonRespuestas.className = `btn-input ${estado}`;
+}
+
+function modificarResultados(estado) {
+    const $resultados = document.querySelectorAll('.resultado');
+    $resultados.forEach(function(index){
+        index.className = `resultado ${estado}`;
+    });
+}
+
+function resetearInput() {
+    const $nodoInput = document.querySelector('#numero-integrantes');
+    $nodoInput.value = '';
 }
