@@ -79,13 +79,13 @@ section h2 {
 .tarea {
     background-color: aliceblue;
     height: 300px;
-    width: 350px;
+    min-width: 350px !important;
     border-radius: 10px;
     border-bottom: 4px solid var(--detail);
 }
 
 .tarea img {
-    height: auto;
+    height: 85%;
 }
 
 .descripcion {
