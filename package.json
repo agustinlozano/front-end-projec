@@ -1,0 +1,22 @@
+{
+  "name": "tarea-clase-6",
+  "version": "1.0.0",
+  "description": "Resuelve las tareas uno y dos de la clase. Estas tareas corresponden a desafios planteados en el curso de JavaScrip, r/Argentina Programa.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agustinlozano/r-argentinaprograma-tarea-clase-6.git"
+  },
+  "author": "Agustin Lozano Blua",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agustinlozano/r-argentinaprograma-tarea-clase-6/issues"
+  },
+  "homepage": "https://github.com/agustinlozano/r-argentinaprograma-tarea-clase-6#readme",
+  "dependencies": {
+    "bootstrap": "^5.0.2"
+  }
+}

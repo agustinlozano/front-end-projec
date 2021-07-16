@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/jpg" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/jpg" href="favicon-16x16.png" sizes="16x16" />
+    <title>Tarea 1 - Clase 6</title>
+</head>
+
+<body>
+    <h1>Bienvenidos, r/argentinaprograma</h1>
+
+    <form>
+        <div class="form-item">
+            <label for="boton-numero-de-integrantes">Numero de integrantes
+            <input type="number" id="numero-integrantes" class="btn-input"/>
+            
+            </label>
+            <button type="submit" id="cargar-integrantes" class="btn-input">Cargar</button>
+        </div>
+        <div id="integrantes">
+            <!---->
+        </div>
+    </form>
+
+    <section id="calculos">
+        <button id="imprimir-respuestas" class="btn-input" disabled>Imprimir respuestas</button>
+
+        <div id="respuestas" >
+            <em id="promedio" class="resultado oculto">El promedio es: </em>
+            <em id="numero-mas-grande" class="resultado oculto">El número más grande es: </em>
+            <em id="numero-mas-chico" class="resultado oculto">El número más pequeño es: </em>
+        </div>
+    </section>
+
+    <button type="reset" id="resetear" class="btn-input">Empezar de nuevo</button>
+
+    <script type="text/javascript" src="js/calculos.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/pruebas.js"></script>
+</body>
+
+</html>

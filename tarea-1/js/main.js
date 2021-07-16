@@ -7,9 +7,11 @@ Punto bonus: Crear un botón para "empezar de nuevo" que empiece el proceso nuev
 */
 
 
-document.querySelector("#boton-cargar-numero-integrantes").onclick = function () {
-    const $numeroDeItegrantes = Number(document.querySelector("#holder-numero-de-integrantes").value);
+document.querySelector("#cargar-integrantes").onclick = function (event) {
+    event.preventDefault();
+    const $numeroDeItegrantes = Number(document.querySelector("#numero-integrantes").value);
     borrarIntegrantes();
+    modificarBotonImprimir('');
     evaluarIntegrantes($numeroDeItegrantes);
 }
 
@@ -21,8 +23,7 @@ function evaluarIntegrantes($numeroDeItegrantes) {
     } else {
         resetearPrograma();
         return 'Este campo debe incluir un numero positivo mayor que cero';
-    }
-    
+    }   
 }
 
 function borrarIntegrantes() {
@@ -30,7 +31,6 @@ function borrarIntegrantes() {
     for (let i = 0; i < $integrantes.length; i++) {
         $integrantes[i].remove();
     }
-
 }
 
 function generarIntegrantes($numeroDeItegrantes) {
@@ -41,7 +41,7 @@ function generarIntegrantes($numeroDeItegrantes) {
         $nodoLabel.innerHTML = `Ingrese la edad del integrante n° #${i}`;
 
         const $nodoInput = document.createElement('input');
-        $nodoInput.classList.add("edad-integrantes");
+        $nodoInput.className = 'edad-integrantes btn-input';
 
         const $div = document.createElement('div');
         $div.className = 'integrante';
@@ -57,43 +57,46 @@ function generarIntegrantes($numeroDeItegrantes) {
     }
 
     //Mostrar botón
-    document.querySelector('#boton-imprimir-respuestas').disabled = false;
+    document.querySelector('#imprimir-respuestas').disabled = false;
     return false;
 }
 
-//Acá voy a tratar de resetear el programa con algunas funciones
+//Acá voy a tratar de resetear el programa
 document.querySelector("#resetear").onclick = function () {
     resetearPrograma();
 }
 
 function resetearPrograma() {
     borrarIntegrantes();
-    ocultarBotonCalculo();
-    ocultarResultados();
+    modificarBotonImprimir('oculto');
+    modificarResultados('oculto');
+    resetearInput();
     return false;
 }
 
-function ocultarBotonCalculo() {
-    document.querySelector('#boton-imprimir-respuestas').disabled = true;
-    return false;
-}
-
-function ocultarResultados() {
-    document.querySelector('#respuestas').className = 'oculto';
-}
-
-document.querySelector("#boton-imprimir-respuestas").onclick = function () {
-
+document.querySelector("#imprimir-respuestas").onclick = function () {
     let $conjuntoDeEdades = document.querySelectorAll('.edad-integrantes');
 
     calcularPromedio($conjuntoDeEdades);
     calcularNumeroMayor($conjuntoDeEdades);
     calcularNumeroMenor($conjuntoDeEdades);
     
-    mostrarResultados();
-
+    modificarResultados('');
 }
 
-function mostrarResultados () {
-    document.querySelector('#respuestas').className = '';
+function modificarBotonImprimir(estado) {
+    const $botonRespuestas  = document.querySelector('#imprimir-respuestas');
+    $botonRespuestas.className = `btn-input ${estado}`;
+}
+
+function modificarResultados(estado) {
+    const $resultados = document.querySelectorAll('.resultado');
+    $resultados.forEach(function(index){
+        index.className = `resultado ${estado}`;
+    });
+}
+
+function resetearInput() {
+    const $nodoInput = document.querySelector('#numero-integrantes');
+    $nodoInput.value = '';
 }
