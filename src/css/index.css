@@ -1,0 +1,123 @@
+:root {
+    --primary: #48435C;
+    --secondary: #EDFFEC;
+    --text: #5A5766;
+    --detail: #61E786;
+    --dark: #171123;
+}
+
+body {
+    background-color: var(--primary);
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+#nav {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+    background-color: var(--secondary) !important;
+    border-bottom: 4px solid var(--detail);
+}
+
+#logo {
+    max-height: 60px;
+}
+
+/*  Titulo  */
+
+#presentacion {
+    margin-top: 150px;
+    color: var(--secondary)
+}
+
+h1 {
+    font-size: 60px;
+}
+
+span {
+    color: var(--detail);
+}
+
+.info-curso {
+    margin-top: 50px;
+}
+
+.links-curso {
+    max-width: 500px;
+    margin: auto;
+
+}
+
+.links-curso i {
+    color: var(--detail);
+    margin-top: 30px;
+    padding: 10px;
+}
+
+/*  Trabajos  */
+
+#work {
+    background-color: var(--text);
+    padding: 50px;
+    max-width: 90%;
+    margin: auto;
+    margin-top: 100px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#work h2 {
+    font-size: 20px;
+}
+
+section h2 {
+    color: var(--secondary);
+    padding: 45px;
+}
+
+.tarea {
+    background-color: aliceblue;
+    height: 300px;
+    width: 350px;
+    border-radius: 10px;
+    border-bottom: 4px solid var(--detail);
+}
+
+.tarea img {
+    height: auto;
+}
+
+.descripcion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-top: 2px solid var(--primary);
+}
+
+.paragraph {
+    color: var(--text);
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Foooter  */
+
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark);
+    height: 100px;
+    margin-top: 150px;
+    color: var(--secondary);
+    border-top: 4px solid var(--detail);
+}
+
+.contacto i {
+    color: var(--secondary);
+}
