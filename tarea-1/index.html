@@ -13,32 +13,30 @@
 <body>
     <h1>Bienvenidos, r/argentinaprograma</h1>
 
-    <form class="box">
-        <label for="boton-numero-de-integrantes">Ingrese la cantidad de integrantes del grupo familiar</label>
-        <br>
-        <input type="number" id="numero-integrantes" />
-        <button type="submit" id="cargar-integrantes">Cargar</button>
-        <br>
+    <form>
+        <div class="form-item">
+            <label for="boton-numero-de-integrantes">Numero de integrantes
+            <input type="number" id="numero-integrantes" class="btn-input"/>
+            
+            </label>
+            <button type="submit" id="cargar-integrantes" class="btn-input">Cargar</button>
+        </div>
         <div id="integrantes">
             <!---->
         </div>
     </form>
 
-    <section>
-        <button id="imprimir-respuestas" disabled>Imprimir respuestas</button>
+    <section id="calculos">
+        <button id="imprimir-respuestas" class="btn-input" disabled>Imprimir respuestas</button>
 
-        <div id="respuestas" class="oculto">
-            <em id="promedio">El promedio es: </em>
-            <br>
-            <em id="numero-mas-grande">El número más grande es: </em>
-            <br>
-            <em id="numero-mas-chico">El número más pequeño es: </em>
-            <br>
+        <div id="respuestas" >
+            <em id="promedio" class="resultado oculto">El promedio es: </em>
+            <em id="numero-mas-grande" class="resultado oculto">El número más grande es: </em>
+            <em id="numero-mas-chico" class="resultado oculto">El número más pequeño es: </em>
         </div>
     </section>
 
-    <br>
-    <button type="reset" id="resetear">Empezar de nuevo</button>
+    <button type="reset" id="resetear" class="btn-input">Empezar de nuevo</button>
 
     <script type="text/javascript" src="js/calculos.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
