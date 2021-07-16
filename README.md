@@ -53,20 +53,6 @@ Podés escribir código de JavaScript directamente acá y ver los resultados de 
 
 |Nombre|Descripción|
 |----|----|
-|Carpeta CSS|contiene los archivos css responsables de los estilos y cómo se ve (estéticamente) nuestro proyecto en la web|
-|Carpeta img|un lugar donde podemos almacenar imágenes para utilizar en nuestra página web.|
-|Carpeta js|contiene los archivos JavaScript que hacen funcionar a nuestro proyecto, define el contenido y hace funcional a una página estatica. Contiene 3 archivos:|
-|\|-- nivel1.js|basicas con explicaciones (comentarios, variables, funciones, declaraciones if/else)|
-|\|-- nivel2.js|JavaScript más complejo con explicaciones (arrays, loops)|
-|\|-- nivel3.js|En proceso de traducción. HTML, CSS y cómo manipularlos con JavaScript (selectores)|
-|Carpeta tareas|Contiene las tareas del curso. Cada uno viene en una subcarpeta con un index.html, abran ese index.html para hacer funcionar el código!|
-|index.html|archivo responsable de la estructura de nuestro proyecto|
-|README.md|archivo con explicaciones e información acerca del proyecto, como correrlo, para qué es, etc. (este archivo que estás leyendo ahora)|
-|machete.md|archivo con una vista rápida a los nombres claves y sus explicaciones|
+|Tarea-1|Empezar preguntando cuánta gente hay en el grupo familiar. Crear tantos inputs+labels como gente haya para completar la edad de cada integrante. Al hacer click en "calcular", mostrar en un elemento pre-existente la mayor edad, la menor edad y el promedio del grupo familiar. Punto bonus: Crear un botón para "empezar de nuevo" que empiece el proceso nuevamente, borrando los inputs ya creados (investigar cómo en MDN).|
+|Tarea-2|Crear una interfaz que permita agregar ó quitar (botones agregar y quitar) inputs+labels para completar el salario anual de cada integrante de la familia que trabaje. Al hacer click en "calcular", mostrar en un elemento pre-existente el mayor salario anual, menor salario anual, salario anual promedio y salario mensual promedio. Punto bonus: si hay inputs vacíos, ignorarlos en el cálculo (no contarlos como 0).|
 
-
-Autora original: Tanya Butenko github: https://github.com/ButenkoT twitter: @ButenkoMe
-
-### Recursos:
-
-[Manual de HTML en español](https://github.com/zetta102/html-handbook-es)
