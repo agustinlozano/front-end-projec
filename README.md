@@ -1,6 +1,6 @@
 # r/Argentina Programa
 
-Este repositorio es una traducción casi literal de https://github.com/muses-code-js/js-intro-workshop, de [MusesCodeJS](https://musescodejs.org/) y su autora Tanya Butenko.
+Es un curso acerca de JavaScript el cual es una traducción casi literal de https://github.com/muses-code-js/js-intro-workshop, de [MusesCodeJS](https://musescodejs.org/) y su autora Tanya Butenko.
 
 * [El post de reddit](https://www.reddit.com/r/argentina/comments/d9wzkh/alguno_que_ande_corto_de_guita_pero_muy/)
 * [El workspace de Slack](https://rargentinaprograma.slack.com) y [el link de invitación](https://join.slack.com/t/rargentinaprograma/shared_invite/zt-a8t8mtnl-P17TciXOmAlvfJRhyqrDbQ)
@@ -12,6 +12,10 @@ Este repositorio es una traducción casi literal de https://github.com/muses-cod
 Un taller de JavaScript introductorio, para principiantes.
 
 Outline general del curso https://docs.google.com/document/d/1D-7fi5afo_kgDFLi_n8czyLFN9jusY9F5PrtHXo5ZSg/edit
+
+## Contenido del repositorio
+
+Si bien los enunciados de las tareas son sencillos ya que estos desafíos eran propuestos dentro de las primeras clases, a menudo cuando fuimos desarrollando el curso se fueron agregando nuevas funcionalidades, nuevos etilos y cambios en el html, se agregaron pruebas unitarias y otros testeos con Cypress, refactorizando código o implementando nuevos conceptos, etc.
 
 ### Estructura:
 
