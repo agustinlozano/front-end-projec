@@ -13,42 +13,6 @@ Un taller de JavaScript introductorio, para principiantes.
 
 Outline general del curso https://docs.google.com/document/d/1D-7fi5afo_kgDFLi_n8czyLFN9jusY9F5PrtHXo5ZSg/edit
 
-
-### Cómo usar este repositorio.
-
-Si estás familiarizado con Git, podés clonar este repositorio en tu pc.
-
-Si no sabés lo que es Git, relajate:
-* Podés hacer click en "Download Zip". ![Imagen de cómo bajarse un repositorio de GitHub en formato .ZIP](https://github.com/r-argentina-programa/introduccion-a-js/raw/master/doc/download_repo.png "Download Repo")
-* Ó [te lo podés bajar directamente](https://github.com/r-argentina-programa/introduccion-a-js/archive/master.zip).
-
-El archivo está zippeado (comprimido), así que primero hay que extraerlo. No abran los archivos dentro del .zip directamente, primero los tienen que extraer.
-
-Arranca por el archivo `README.md` y después abrí `js/nivel1.js`.
-
-Para ver la página web en tu buscador, abrí `index.html` haciéndole doble click, si te sale la opción ‘abrir en navegador’, elegila. De preferencia usar Chrome, pero Firefox también funciona.
-
-Seguí las intrucciones en `js/nivel1.js` y escribí tu código en tu editor de texto (acá es donde vive tu código y vos podés escribirlo, editarlo y borrarlo).
-
-Para ver cualquier cosa que edites, vas a necesitar guardar los cambios en el archivo y actualizar la página web en el navegador. El resultado de cualquier `console.log()` va a aparecer en la consola de tu navegador.
-
-### Cómo abrir la consola del navegador:
-
-[Video de cómo abrir la consola del navegador](https://drive.google.com/file/d/1-prYGV0u4CF5MJ-GInW38pVy7Ew-ke1P/view)
-
-| Navegador | Plataforma | Instrucciones | 
-| ----------- | -------- | ------------------ | 
-| Chrome | Cualquiera | Click derecho en la página web, y seleccionar `Inspect`. Después hacer click en la pestaña `consola` | 
-| Chrome | Mac | Apretar COMMAND + OPTION + J | 
-| Chrome | Windows | Apretar CONTROL + SHIFT + J | 
-| Firefox | Cualquiera | Click derecho en la página web, click en `Inspect Element`. Después hacer click en la pestaña `consola` | 
-| Firefox | Mac | Apretar COMMAND + OPTION + K | 
-| Firefox | Windows | Apretar CONTROL + SHIFT + K | 
-
-La consola/herramientas del desarrollador va a aparecer al pie de la pantalla o a la derecha de la misma.
-
-Podés escribir código de JavaScript directamente acá y ver los resultados de manera inmediata, pero en el instante en el que actualices la página tu código va a desaparecer, por esto es que usamos un editor de texto para guardar nuestro código.
-
 ### Estructura:
 
 |Nombre|Descripción|
