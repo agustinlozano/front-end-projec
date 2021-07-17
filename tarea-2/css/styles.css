@@ -54,7 +54,7 @@ section p {
 .btn {
 	background-color: var(--dark-liver);
 	color: var(--violet);
-	border: 1px solid var(--lavender);
+	border: none;
 	border-radius: 3px;
 	height: 30px;
 	font-weight: bold;

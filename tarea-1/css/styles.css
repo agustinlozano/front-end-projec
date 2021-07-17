@@ -1,12 +1,13 @@
 :root {
-	--bg: #FFE787;
-	--bg-secondary: #D1D0A3;
-	--text: rgb(77, 77, 77);
-	--light: rgb(243, 243, 229);
+	--raisin-balck: #2C2C34;
+	--dark-liver: #494850;
+	--heliot-gray: #978897;
+	--violet: #B18FCF;
+	--lavender: #D8D8F6;
 }
 
 html {
-	background-color: var(--bg);
+	background-color: var(--raisin-balck);
 	font-family: 'Roboto', sans-serif;
 }
 
@@ -16,12 +17,17 @@ body {
 	flex-direction: column;
 	align-items: center;
 	margin: auto;
-	color: var(--text);
+	color: var(--lavender);
 }
 
 h1 {
-	margin-top:100px;
+	margin-top: 100px;
 	margin-bottom: 50px;
+	color: var(--lavender);
+}
+
+h1 span{
+	color: var(--violet);
 }
 
 form {
@@ -36,25 +42,24 @@ form {
 	flex-direction: column;
 	justify-content: left;
 	margin-top: 35px;
-}	
+}
 
 .integrante {
 	background-color: var(--bg-secondary);
-	padding: 15px;
+	padding: 5px;
 	margin-bottom: 5px;
 	border-radius: 3px;
 }
 
 .edad-integrantes {
-	margin-left: 30px;
+	margin-left: 15px;
 }
-
 
 #calculos {
 	margin: 40px auto;
 	padding: 35px;
 	width: 500px;
-	background-color: var(--light);
+	background-color: var(--heliot-gray);
 	border-radius: 10px;
 	text-align: left;
 	line-height: 20px;
@@ -64,12 +69,13 @@ form {
 	font-weight: bolder;
 	margin: 5px;
 }
+
 #respuestas {
 	display: flex;
 	margin-top: 20px;
 }
 
-.oculto{
+.oculto {
 	display: none;
 }
 
@@ -81,13 +87,17 @@ form {
 
 .btn-input {
 	font-weight: bolder;
-	background-color: var(--light);
-	color: var(--text);
-	border: 1px solid var(--bg-secondary);
+	background-color: var(--dark-liver);
+	color: var(--violet);
+	border: none;
 	height: 35px;
 	border-radius: 5px;
 }
 
 input {
 	padding-left: 15px;
+}
+
+input:focus {
+	outline: none;
 }
