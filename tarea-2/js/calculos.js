@@ -30,5 +30,5 @@ function calcularPromedio(array) {
         let elementoDeArray = array[i];
         sumaDeElemntos = sumaDeElemntos + elementoDeArray;
     }
-    return sumaDeElemntos / array.length;
+    return (sumaDeElemntos / array.length).toFixed(2);
 }

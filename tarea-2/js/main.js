@@ -20,7 +20,11 @@ function crearNuevoIntegrante(contadorIntegrantes) {
     contadorIntegrantes++;
 
     const $nodoLabel = document.createElement('label');
-    $nodoLabel.innerHTML = `Salario anual integrante #${contadorIntegrantes}`;
+    const $nodoSpan = document.createElement('span');
+    
+    $nodoSpan.className = 'highlighted';
+    $nodoSpan.innerHTML = `#${contadorIntegrantes}`;
+    $nodoLabel.innerHTML = `Salario anual integrante `;
 
     const $nodoInput = document.createElement('input');
     $nodoInput.classList.add("salario-integrante");
@@ -29,6 +33,7 @@ function crearNuevoIntegrante(contadorIntegrantes) {
     const $div = document.createElement('div');
     $div.className = 'integrante';
 
+    $nodoLabel.appendChild($nodoSpan);
     $div.appendChild($nodoLabel);
     $div.appendChild($nodoInput);
 
@@ -39,7 +44,7 @@ function crearNuevoIntegrante(contadorIntegrantes) {
 }
 
 function mostrarNuevoIntegrante($div) {
-    const $integrantes = document.querySelector('#contenedor-total-integrantes');
+    const $integrantes = document.querySelector('#contenedor-integrantes');
     $integrantes.appendChild($div);
 }
 
@@ -49,11 +54,11 @@ function incrementarCantidadIntegrates() {
 }
 
 function mostrarContenedorDeIntegrantes() {
-    document.querySelector('#contenedor-total-integrantes').className = '';
+    document.querySelector('#contenedor-integrantes').className = '';
 }
 
 function mostrarBotonCalcular() {
-    document.querySelector('#realizar-calculos').className = '';
+    document.querySelector('#realizar-calculos').className = 'btn ';
 }
 
 document.querySelector('#quitar-integrante').onclick = function (event) {
@@ -71,7 +76,7 @@ function quitarUltimoIntegrante() {
 
     if (contadorIntegrantes == 0) {
         const $botonCalcular = document.querySelector('#realizar-calculos');
-        $botonCalcular.className = 'oculto';
+        $botonCalcular.className = 'btn oculto';
     }
 }
 

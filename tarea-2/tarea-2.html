@@ -11,19 +11,21 @@
 </head>
 
 <body>
-    <div>
-        <h1>Bienvenidos, r/argentinaprograma</h1>
+    <div id="presentacion">
+        <h1>Bienvenidos, <span class="highlighted">r/argentinaprograma</span></h1>
         <p>Aquí debajo aparecerán los campos correspondientes a cada integrante,</p>
         <p>donde usted deberá ingresar el salario anual de cada uno</p>
     </div>
 
-    <button type="submit" id="agregar-integrante">Agregar un integrante</button>
-    <button type="submit" id="quitar-integrante">Quitar un integrante</button>
+    <form action="">
+        <button type="submit" id="agregar-integrante" class="btn">Agregar un integrante</button>
+        <button type="submit" id="quitar-integrante" class="btn">Quitar un integrante</button>
 
-    <br>
-
-    <div class="oculto" id="contenedor-total-integrantes"><!----></div>
-    <button type="submit" id="realizar-calculos" class="oculto">Calcular</button>
+        <div class="oculto" id="contenedor-integrantes">
+            <!---->
+        </div>
+        <button type="submit" id="realizar-calculos" class="btn oculto">Calcular</button>
+    </form>
 
     <section class="oculto" id="respuestas">
         <p>El salario anual mas alto es: <strong id="mayor-salario"></strong></p>
