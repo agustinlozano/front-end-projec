@@ -125,7 +125,7 @@ a:hover{
     justify-content: center;
     align-items: center;
     background-color: var(--dark);
-    height: 100px;
+    height: 180px;
     margin-top: 150px;
     color: var(--secondary);
     border-top: 4px solid var(--detail);
