@@ -4,20 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/jpg" href="favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/jpg" href="favicon-16x16.png" sizes="16x16" />
+    <link rel="stylesheet" href="css/styles.css">
     <title>Tarea 1 - Clase 6</title>
 </head>
 
 <body>
-    <h1>Bienvenidos, <span>r/argentinaprograma</span></h1>
+    <div id="presentacion">
+        <h1>Bienvenidos, <span>r/argentinaprograma</span></h1>
+        <p>En esta tarea vamos a sacar algunas conclusiones con respecto a las edades
+            dentro de un grupo de personas. obtendremos:
+        </p>
+        <ul>
+            <li>El promedio de edades.</li>
+            <li>El integrante con mayor edad del grupo.</li>
+            <li>El integrante más joven del grupo.</li>
+        </ul>
+        <p>para ello vamos a tener que introducir algunos valores a través del de los
+            distintos campos, estos van a servir como dato para que el navegador los
+            procese y luego nos entregue los resultados.
+        </p>
+    </div>
 
     <form>
         <div class="form-item">
-            <label for="boton-numero-de-integrantes">Numero de integrantes
-            <input type="number" id="numero-integrantes" class="btn-input"/>
-            
+            <label for="boton-numero-de-integrantes">Número de integrantes
+                <input type="number" id="numero-integrantes" class="btn-input" />
             </label>
             <button type="submit" id="cargar-integrantes" class="btn-input">Cargar</button>
         </div>
@@ -26,17 +39,18 @@
         </div>
     </form>
 
-    <section id="calculos">
-        <button id="imprimir-respuestas" class="btn-input" disabled>Imprimir respuestas</button>
+    <section>
+        <div id="calculos">
+            <button id="imprimir-respuestas" class="btn-input" disabled>Imprimir respuestas</button>
 
-        <div id="respuestas" >
-            <em id="promedio" class="resultado oculto">El promedio es: </em>
-            <em id="numero-mas-grande" class="resultado oculto">El número más grande es: </em>
-            <em id="numero-mas-chico" class="resultado oculto">El número más pequeño es: </em>
+            <div id="respuestas">
+                <em id="promedio" class="resultado oculto">El promedio es: </em>
+                <em id="numero-mas-grande" class="resultado oculto">El número más grande es: </em>
+                <em id="numero-mas-chico" class="resultado oculto">El número más pequeño es: </em>
+            </div>
         </div>
+        <button type="reset" id="resetear" class="btn-input">Empezar de nuevo</button>
     </section>
-
-    <button type="reset" id="resetear" class="btn-input">Empezar de nuevo</button>
 
     <script type="text/javascript" src="js/calculos.js"></script>
     <script type="text/javascript" src="js/main.js"></script>

@@ -38,7 +38,7 @@ function generarIntegrantes($numeroDeItegrantes) {
 
         //esta sección crea los label/input + un *nuevo* <div> donde ponerlos
         const $nodoLabel = document.createElement('label');
-        $nodoLabel.innerHTML = `Ingrese la edad del integrante n° #${i}`;
+        $nodoLabel.innerHTML = `Edad del integrante #${i}`;
 
         const $nodoInput = document.createElement('input');
         $nodoInput.className = 'edad-integrantes btn-input';
