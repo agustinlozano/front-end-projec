@@ -78,8 +78,8 @@ section h2 {
 
 .tarea {
     background-color: aliceblue;
-    height: 300px;
-    min-width: 350px !important;
+    height: 342px;
+    min-width: 400px;
     border-radius: 10px;
     border-bottom: 4px solid var(--detail);
     box-shadow: 2px 2px 10px rgb(125, 125, 125);
@@ -133,4 +133,36 @@ a:hover{
 
 .contacto i {
     color: var(--secondary);
+}
+
+
+/* Media Queries */
+@media (max-width: 575.98px) {
+    .tarea {
+        margin-bottom: 40px;
+        min-width: 300px !important;
+        height: 257px !important;
+    }
+
+    .tarea img {
+        width: 140px;
+    }
+}
+
+@media (max-width: 945px) {
+    .icon-box {
+        width: 15px;
+    }
+
+    .tarea {
+        width: 500px;
+        height: 428px;
+        max-width: 500px;
+        max-height: 428px;
+        margin-bottom: 50px;
+    }
+
+    .tarea img {
+        width: 100%;
+    }
 }
