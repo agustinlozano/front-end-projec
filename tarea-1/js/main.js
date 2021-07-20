@@ -75,7 +75,7 @@ function resetearPrograma() {
 }
 
 document.querySelector("#imprimir-respuestas").onclick = function () {
-    let $conjuntoDeEdades = document.querySelectorAll('.edad-integrantes');
+    const $conjuntoDeEdades = document.querySelectorAll('.edad-integrantes');
 
     calcularPromedio($conjuntoDeEdades);
     calcularNumeroMayor($conjuntoDeEdades);

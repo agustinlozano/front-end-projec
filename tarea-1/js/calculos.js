@@ -13,11 +13,11 @@ function calcularPromedio($conjuntoDeEdades) {
         total = total + elementoArray;
     }
 
-    let $contenidoEm = document.querySelector("#promedio");
+    const $resultado = document.querySelector("#promedio span");
 
     valorPromedio = total / arrayDeNumeros.length;
 
-    $contenidoEm.innerText = `El promedio de edades es: ${valorPromedio}`;
+    $resultado.innerText = `${valorPromedio}`;
 
 }
 
@@ -35,9 +35,9 @@ function calcularNumeroMayor($conjuntoDeEdades) {
         }
     }
 
-    let $contenidoEm = document.querySelector("#numero-mas-grande");
+    const $resultado = document.querySelector("#numero-mas-grande span");
 
-    $contenidoEm.innerText = `La mayor edad es: ${numeroMayor}`;
+    $resultado.innerText = `${numeroMayor}`;
 }
 
 
@@ -54,7 +54,7 @@ function calcularNumeroMenor($conjuntoDeEdades) {
         }
     }
 
-    let $contenidoEm = document.querySelector("#numero-mas-chico");
+    const $resultado = document.querySelector("#numero-mas-chico span");
 
-    $contenidoEm.innerText = `La menor edad es: ${numeroMenor}`;
+    $resultado.innerText = `${numeroMenor}`;
 }
