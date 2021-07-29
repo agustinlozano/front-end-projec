@@ -1,7 +1,5 @@
 /// <reference types="cypress" />
 
-// const { should } = require("chai");
-
 const URL = 'http://127.0.0.1:5500/tarea-2/tarea-2.html';
 
 context('Tarea dos - Clase 6', () => {
@@ -50,8 +48,6 @@ context('Tarea dos - Clase 6', () => {
             cy.get('#realizar-calculos').click();
         });
 
-        
-        
         it('se asegura que los outputs sean correctos', () => {
             const mayorSalario = resultadosTest.mayor;
             const menorSalario = resultadosTest.menor;
