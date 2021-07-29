@@ -11,10 +11,7 @@ context('Tarea uno - Clase 6', () => {
 
     describe('pruebas para el event handler, cargar interantes', () => {
         it('testea el boton cargar', () => {    
-            const $botonCargar = cy.get('#cargar-integrantes');
-            expect($botonCargar).to.exist;
-            
-            $botonCargar.should('have.attr', 'type', 'submit');
+            cy.get('#cargar-integrantes').should('have.attr', 'type', 'submit');
         });
 
         it('se asegura que no haya integrantes antes de cargar los nuevos', () => {
@@ -34,10 +31,9 @@ context('Tarea uno - Clase 6', () => {
         const keys = Object.keys(resultados);
         
         it('se asegura que los integrantes se generen correctamente', () => {
-            const $input = cy.get('#numero-integrantes');
             const VALOR_EJEMPLO = cantidadIntegrantes;
             
-            $input.type(VALOR_EJEMPLO);
+            cy.get('#numero-integrantes').type(VALOR_EJEMPLO);
             
             cy.get('#cargar-integrantes').click();
 
@@ -67,7 +63,6 @@ function generarNumeroEntre(minimo, maximo) {
 
 function calcularRultados(edadesInegrantes) {
     const resultados = {};
-    console.log(edadesInegrantes);
 
     const mayorEdad = calcularMayor(edadesInegrantes);
     const menorEdad = calcularMenor(edadesInegrantes);
@@ -80,12 +75,12 @@ function calcularRultados(edadesInegrantes) {
     return resultados;
 }
 
-function calcularMayor(edadesInegrantes) {
+function calcularMayor(array) {
     let numeroMayor;
     let comparador = 0;
 
-    edadesInegrantes.forEach(edadesInegrantes => {
-        let numeroAnalizado = edadesInegrantes;
+    array.forEach(elemento => {
+        let numeroAnalizado = elemento;
 
         if (numeroAnalizado >= comparador) {
             numeroMayor = numeroAnalizado;
@@ -96,12 +91,12 @@ function calcularMayor(edadesInegrantes) {
     return numeroMayor;
 }
 
-function calcularMenor(edadesInegrantes) {
+function calcularMenor(array) {
     let numeroMenor;
     let comparador = 999999;
 
-    edadesInegrantes.forEach(edadesInegrantes => {
-        let numeroAnalizado = edadesInegrantes;
+    array.forEach(elemento => {
+        let numeroAnalizado = elemento;
 
         if (numeroAnalizado <= comparador) {
             numeroMenor = numeroAnalizado;
@@ -112,12 +107,12 @@ function calcularMenor(edadesInegrantes) {
     return numeroMenor;
 }
 
-function calcularPromedio(edadesInegrantes) {
-    const cantidadIntegrantes = edadesInegrantes.length;
+function calcularPromedio(array) {
+    const cantidadIntegrantes = array.length;
     let suma = 0;
 
-    edadesInegrantes.forEach(edadesInegrantes => {
-        suma = suma + edadesInegrantes;
+    array.forEach(elemento => {
+        suma = suma + elemento;
     });
     
     return suma / cantidadIntegrantes;

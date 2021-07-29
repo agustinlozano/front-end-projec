@@ -83,39 +83,39 @@ function quitarUltimoIntegrante() {
 document.querySelector('#realizar-calculos').onclick = function (event) {
     event.preventDefault();
 
-    let arrayDeSalariosAnuales = [];
-    let arrayDeSalariosMensuales = [];
-    pushearSalariosDeLosIntegrantes(arrayDeSalariosAnuales);
-    calcularSalariosMensuales(arrayDeSalariosAnuales, arrayDeSalariosMensuales); 
-    llamarFucionesDeCalculos(arrayDeSalariosAnuales, arrayDeSalariosMensuales);   
+    let salariosAnuales = [];
+    let salariosMensuales = [];
+    pushearSalariosDeLosIntegrantes(salariosAnuales);
+    calcularSalariosMensuales(salariosAnuales, salariosMensuales); 
+    llamarFucionesDeCalculos(salariosAnuales, salariosMensuales);   
 }
 
-function pushearSalariosDeLosIntegrantes(arrayDeSalariosAnuales) {
+function pushearSalariosDeLosIntegrantes(salariosAnuales) {
     const $integrantes = document.querySelectorAll('.salario-integrante');
     for (let i = 0; i < $integrantes.length; i++) {
         let evaluarElemento = $integrantes[i];
         if (evaluarElemento.value  !== '') {
-            arrayDeSalariosAnuales.push(Number(evaluarElemento.value));
+            salariosAnuales.push(Number(evaluarElemento.value));
         }
     }
-    return arrayDeSalariosAnuales;
+    return salariosAnuales;
 }
 
-function calcularSalariosMensuales(arrayDeSalariosAnuales, arrayDeSalariosMensuales) {
-    for (let i = 0; i < arrayDeSalariosAnuales.length; i++) {
-        const mesesDelAño = 12;
-        let elementoDeArray = arrayDeSalariosAnuales[i];
-        let salarioMensual = elementoDeArray / mesesDelAño;
-        arrayDeSalariosMensuales.push(Math.round(salarioMensual));
+function calcularSalariosMensuales(salariosAnuales, salariosMensuales) {
+    for (let i = 0; i < salariosAnuales.length; i++) {
+        const mesesDelAnio = 12;
+        let elementoDeArray = salariosAnuales[i];
+        let salarioMensual = elementoDeArray / mesesDelAnio;
+        salariosMensuales.push(salarioMensual);
     }
-    return arrayDeSalariosMensuales;
+    return salariosMensuales;
 } 
 
-function llamarFucionesDeCalculos(arrayDeSalariosAnuales, arrayDeSalariosMensuales) {
-    mostrarSalarios('mayor', calcularMayorSalario(arrayDeSalariosAnuales));
-    mostrarSalarios('menor', calcularMenorSalario(arrayDeSalariosAnuales));
-    mostrarPromedios('salario-anual', calcularPromedio(arrayDeSalariosAnuales));
-    mostrarPromedios('salario-mensual', calcularPromedio(arrayDeSalariosMensuales));
+function llamarFucionesDeCalculos(salariosAnuales, salariosMensuales) {
+    mostrarSalarios('mayor', calcularMayor(salariosAnuales));
+    mostrarSalarios('menor', calcularMenor(salariosAnuales));
+    mostrarPromedios('salario-anual', calcularPromedio(salariosAnuales));
+    mostrarPromedios('salario-mensual', calcularPromedio(salariosMensuales));
     mostrarNodoConResultados();
 }
 
