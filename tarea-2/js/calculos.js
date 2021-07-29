@@ -1,8 +1,8 @@
-function calcularMayorSalario(arrayDeSalariosAnuales) {
+function calcularMayor(array) {
     let comprarador = 0;
     let elementoMayor;
-    for (let i = 0; i < arrayDeSalariosAnuales.length; i++) {
-        let elementoDeArray = arrayDeSalariosAnuales[i];
+    for (let i = 0; i < array.length; i++) {
+        let elementoDeArray = array[i];
         if (elementoDeArray > comprarador) {
             elementoMayor = elementoDeArray;
             comprarador = elementoMayor;
@@ -11,11 +11,11 @@ function calcularMayorSalario(arrayDeSalariosAnuales) {
     return elementoMayor;
 }
 
-function calcularMenorSalario(arrayDeSalariosAnuales) {
+function calcularMenor(array) {
     let comprarador = 9999999;
     let elementoMenor;
-    for (let i = 0; i < arrayDeSalariosAnuales.length; i++) {
-        let elementoDeArray = arrayDeSalariosAnuales[i];
+    for (let i = 0; i < array.length; i++) {
+        let elementoDeArray = array[i];
         if (elementoDeArray < comprarador) {
             elementoMenor = elementoDeArray;
             comprarador = elementoMenor;
