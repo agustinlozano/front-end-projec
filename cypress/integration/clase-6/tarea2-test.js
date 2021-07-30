@@ -10,18 +10,11 @@ context('Tarea dos - Clase 6', () => {
     describe('pruebas para el event handler, cargar integrante', () => {
         const numeroIntegrantes = generarNumeroEntre(3,8);
         const salariosAnuales = [];
-        const salariosMensuales = [];
-        const mesesAnio = 12;
 
         for (let i = 0; i<numeroIntegrantes; i++) {
             salariosAnuales[i] = generarNumeroEntre(120000, 3000000);
         }
-        for (let i = 0; i<numeroIntegrantes; i++) {
-            salariosMensuales[i] = salariosAnuales[i] / mesesAnio;
-        }
         
-        const resultadosTest = calcularRultados(salariosAnuales, salariosMensuales);
-
         it('se asegura que el boton que dispara el evento exista', () => {
             cy.get('#agregar-integrante').then($addButton => {
                 expect($addButton).to.exist;
@@ -37,7 +30,9 @@ context('Tarea dos - Clase 6', () => {
                 cy.get('#agregar-integrante').click();
             }
 
-            cy.get('#contenedor-integrantes').children().should('have.length', VALOR_EJEMPLO);
+            cy.get('#contenedor-integrantes')
+                .children()
+                .should('have.length', VALOR_EJEMPLO);
             
             cy.get('.salario-integrante').should('have.attr', 'type', 'number');
             
@@ -49,13 +44,17 @@ context('Tarea dos - Clase 6', () => {
         });
 
         it('se asegura que los outputs sean correctos', () => {
+            const salariosMensuales = [];
+            const mesesAnio = 12;
+            for (let i = 0; i<numeroIntegrantes; i++) {
+                salariosMensuales[i] = salariosAnuales[i] / mesesAnio;
+            }
+            
+            const resultadosTest = calcularRultados(salariosAnuales, salariosMensuales);
+
             const mayorSalario = resultadosTest.mayor;
             const menorSalario = resultadosTest.menor;
             const promedioSalarios = resultadosTest.promedio;
-
-            console.log(mayorSalario);
-            console.log(menorSalario);
-            console.log(promedioSalarios);
 
             cy.get('#mayor-salario').contains(mayorSalario);
             cy.get('#menor-salario').contains(menorSalario);
